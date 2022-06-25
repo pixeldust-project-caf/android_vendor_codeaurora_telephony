@@ -460,6 +460,11 @@ public class QtiImsExtUtils {
         return QtiCarrierConfigHelper.getInstance().getBoolean(context, phoneId,
                 carrierConfig);
     }
+    
+    //TODO not removing this deprecated API to avoid compilation errors.
+    public static boolean allowVideoCallsInLowBattery(Context context) {
+        return allowVideoCallsInLowBattery(QtiCallConstants.INVALID_PHONE_ID, context);
+    }
 
     public static boolean allowVideoCallsInLowBattery(int phoneId, Context context) {
         return isCarrierConfigEnabled(phoneId, context,
